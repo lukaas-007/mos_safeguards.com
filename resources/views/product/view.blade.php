@@ -36,9 +36,9 @@
                         <template x-for="image in images">
                             <div
                                 x-show="activeImage === image"
-                                class="w-full h-[240px] sm:h-[400px] flex items-center justify-center"
+                                class="aspect-w-3 aspect-h-2"
                             >
-                                <img :src="image" alt="" class="w-auto h-auto max-h-full mx-auto"/>
+                                <img :src="image" alt="" class="w-auto mx-auto"/>
                             </div>
                         </template>
                         <a
