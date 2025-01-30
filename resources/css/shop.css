@@ -1,0 +1,1 @@
+.product-wrapper{width:calc(80% - 2rem);margin:auto;background-color:red;padding:1rem;display:flex;flex-wrap:wrap;justify-content:space-evenly}.product-wrapper .product-item{background-color:var(--background-color-one);width:30%;border-radius:16px}
