@@ -217,7 +217,7 @@
                         href="{{ route('register') }}"
                         class="inline-flex items-center px-3 py-2 mx-5 text-white transition-colors rounded shadow-md bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800"
                     >
-                        Register now
+                        {{__"Register now"}}
                     </a>
                 </li>
             @endif
