@@ -42,7 +42,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l1 5m0 0h13l1-5h2M5 8l1 9h11l1-9M7 19a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z"></path>
                     </svg>
-                    <span class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full" style="top: -10px; right: -10px; background-color: rgba(14, 57, 14, 1);">{{ 0 }}</span>
+                    <span class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full" style="top: -10px; right: -10px; background-color: rgba(14, 57, 14, 1);">{{ \App\Helpers\Cart::getCartItemsCount() }}</span>
                 </a>
 
                 <!-- Settings Dropdown -->

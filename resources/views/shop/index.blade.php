@@ -10,12 +10,26 @@
                 <h2 class='product-title'>{{ $product->title }}</h2>
                 <p class='product-price'>{{ $product->price }}</p>
 
-                <form action="{{ route('shop.index') }}" method="post">
+                <form action="{{ route('cart.add', $product->slug) }}" method="post">
                     @csrf
-                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                    <button type="submit" class='product-add-to-cart'>{{ __('shop.add_to_cart') }}</button>
+                    <button type="button" class='product-add-to-cart' onclick='addProductToCart("{{ $product->slug }}", "{{ csrf_token() }}", "{{ route('cart.add', $product->slug) }}")'>{{ __('shop.add_to_cart') }}</button>
                 </form>
             </div>
+
         @endforeach
+
+        <script>
+            function addProductToCart(slug, csrfToken, url) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', url);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+                xhr.onload = function(e) {
+                    alert(e.target.responseText);
+                    location.reload();
+                };
+                xhr.send();
+            }
+        </script>
     </div>
 </x-app-layout>
