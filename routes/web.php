@@ -21,11 +21,13 @@ Route::get('/about', function () {
     return view('about.index');
 })->name('about');
 
-Route::prefix('/cart')->name('cart.')->group(function () {
-    Route::get('/', [CartController::class, 'index'])->name('index');
-    Route::post('/add/{product:slug}', [CartController::class, 'add'])->name('add');
-    Route::post('/remove/{product:slug}', [CartController::class, 'remove'])->name('remove');
-    Route::post('/update-quantity/{product:slug}', [CartController::class, 'updateQuantity'])->name('update-quantity');
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::prefix('/cart')->name('cart.')->group(function () {
+        Route::get('/', [CartController::class, 'index'])->name('index');
+        Route::post('/add/{product:slug}', [CartController::class, 'add'])->name('add');
+        Route::post('/remove/{product:slug}', [CartController::class, 'remove'])->name('remove');
+        Route::post('/update-quantity/{product:slug}', [CartController::class, 'updateQuantity'])->name('update-quantity');
+    });
 });
 
 
