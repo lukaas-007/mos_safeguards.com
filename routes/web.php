@@ -16,9 +16,9 @@ Route::get('/contact', function () {
     return view('contact.index');
 })->name('contact');
 
-// Route::get('/about', function () {
-//     return view('about.index');
-// })->name('about');
+Route::get('/about', function () {
+    return view('about.index');
+})->name('about');
 
 Route::resource('/shop', controller: ShopController::class);
 
