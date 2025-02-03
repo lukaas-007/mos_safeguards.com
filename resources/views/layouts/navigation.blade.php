@@ -18,13 +18,13 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('shop.index')" :active="request()->routeIs('shop.index' || 'shop.show')">
+                    <x-nav-link :href="route('shop.index')" :active="request()->routeIs('shop.*')">
                         {{ __('header.shop') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('header.about us') }}
                     </x-nav-link>
                 </div>

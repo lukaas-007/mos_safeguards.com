@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Product;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -17,11 +18,9 @@ Route::get('/contact', function () {
     return view('contact.index');
 })->name('contact');
 
-Route::get('/about', function () {
-    return view('about.index');
-})->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::middleware(['auth', 'verified'])->group(function() {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('/cart')->name('cart.')->group(function () {
         Route::get('/', [CartController::class, 'index'])->name('index');
         Route::post('/add/{product:slug}', [CartController::class, 'add'])->name('add');
