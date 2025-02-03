@@ -77,8 +77,12 @@
         </script>
 
         <div class="cart-total">
-            <h2>{{ __('cart.total') }}</h2>
-            {{ $total }}
+
+            <div class='cart-total-price'>
+                {{ __('cart.total') }}: {{ $total }}
+            </div>
+
+            <a href="{{ route('cart.index') }}" class="checkout-button">{{ __('cart.checkout') }}</a>
         </div>
     </div>
 </x-app-layout>

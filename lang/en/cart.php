@@ -14,4 +14,10 @@ return [
     */
 
     'cart' => 'Cart',
+    'cart_empty' => 'Cart is empty',
+    'quantity' => 'Quantity',
+    'update' => 'Update',
+    'remove' => 'Remove',
+    'total' => 'Total',
+    'checkout' => 'Checkout',
 ];
