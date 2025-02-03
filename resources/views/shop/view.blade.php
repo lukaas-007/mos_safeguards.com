@@ -25,6 +25,22 @@
         </div>
 
         <script>
+            const images = document.querySelectorAll('.image-selector img');
+
+            images[0].classList.add('selected');
+
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    document.querySelector('.image-display img').src = image.src;
+
+                    images.forEach(img => {
+                        img.classList.remove('selected');
+                    })
+
+                    image.classList.add('selected');
+                });
+            });
+
             function addProductToCart(slug, csrfToken, url) {
                 const xhr = new XMLHttpRequest();
                 xhr.open('POST', url);
