@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\ContactFormMail;
+use App\Mail\ContactConfirmation;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Product;
 use App\Http\Controllers\ShopController;
@@ -43,6 +44,8 @@ Route::post('/contact', function (Request $request) {
     ]);
 
     Mail::to('vanbriemenlucas@gmail.com')->send(new ContactFormMail($validatedData));
+    Mail::to($request->email)->send(new ContactConfirmation($validatedData));
+
 
     return back()->with('success', 'Your message has been sent!');
 });

@@ -8,9 +8,11 @@ This document outlines the tasks and improvements needed for the MOS-safeguards.
 - [ ] profile page
 - [ ] home page
 - [ ] checkout page/payment gateway
+- [ ] login/register page clean up
 
 ## Bug Fixes
-- [ ] send email to usermail on contact form (to show that the message was sent)
+- [X] send email to usermail on contact form (to show that the message was sent)
+- [ ] Display the added to cart better than an alert
 
 ## Deployment
 - [ ] Production Deployment Plan  
