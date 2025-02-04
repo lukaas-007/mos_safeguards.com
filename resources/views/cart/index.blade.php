@@ -82,7 +82,14 @@
                 {{ __('cart.total') }}: {{ $total }}
             </div>
 
-            <a href="{{ route('cart.index') }}" class="checkout-button">{{ __('cart.checkout') }}</a>
+            <form action="{{route('cart.checkout')}}" method="post">
+                @csrf
+                <button type="submit" class="checkout-button">
+                    {{ __('cart.checkout') }}
+                </button>
+            </form>
+
+
         </div>
     </div>
 </x-app-layout>
