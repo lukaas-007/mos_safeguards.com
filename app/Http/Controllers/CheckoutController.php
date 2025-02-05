@@ -52,6 +52,15 @@ class CheckoutController extends Controller
         }
 
         foreach ($products as $product) {
+
+            $taxRate = \Stripe\TaxRate::create([
+                'display_name' => 'VAT',
+                'description' => '21% VAT',
+                'percentage' => 21,
+                'inclusive' => false, // set to false since tax is added on top of the price
+            ]);
+
+
             $quantity = $cartItems[$product->id]['quantity'];
             $totalPrice += $product->price * $quantity;
             $lineItems[] = [
@@ -64,6 +73,7 @@ class CheckoutController extends Controller
                     'unit_amount' => $product->price * 100,
                 ],
                 'quantity' => $quantity,
+                'tax_rates' => [$taxRate->id],
             ];
             $orderItems[] = [
                 'product_id' => $product->id,
@@ -76,9 +86,6 @@ class CheckoutController extends Controller
                 $product->save();
             }
         }
-//        dd(route('checkout.failure', [], true));
-
-//        dd(route('checkout.success', [], true) . '?session_id={CHECKOUT_SESSION_ID}');
 
         $session = \Stripe\Checkout\Session::create([
             'line_items' => $lineItems,
@@ -176,10 +183,9 @@ class CheckoutController extends Controller
         foreach ($order->items as $item) {
             $lineItems[] = [
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'EUR',
                     'product_data' => [
-                        'name' => $item->product->title,
-//                        'images' => [$product->image]
+                        'name' => $item->product->title
                     ],
                     'unit_amount' => $item->unit_price * 100,
                 ],
@@ -190,8 +196,9 @@ class CheckoutController extends Controller
         $session = \Stripe\Checkout\Session::create([
             'line_items' => $lineItems,
             'mode' => 'payment',
-            'success_url' => route('checkout.success', [], true) . '?session_id={CHECKOUT_SESSION_ID}',
+            'success_url' => route('checkout.success', [], true) . '?session_id={CHECKOUT_SESSION_ID}?kaas',
             'cancel_url' => route('checkout.failure', [], true),
+            'automatic_tax' => ['enabled' => true],
         ]);
 
         $order->payment->session_id = $session->id;

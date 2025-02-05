@@ -21,5 +21,6 @@ return [
     'cart' => 'Cart',
     'login' => 'Login',
     'profile' => 'Profile',
+    'orders' => 'Orders',
     'logout' => 'Logout',
 ];

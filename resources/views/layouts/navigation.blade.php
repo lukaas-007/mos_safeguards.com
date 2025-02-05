@@ -66,6 +66,11 @@
                                     {{ __('header.profile') }}
                                 </x-dropdown-link>
 
+                                <x-dropdown-link :href="route('order.index')">
+                                    {{ __('header.orders') }}
+                                </x-dropdown-link>
+
+
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
