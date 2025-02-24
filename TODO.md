@@ -8,7 +8,7 @@ This document outlines the tasks and improvements needed for the MOS-safeguards.
 - [X] profile page
 - [ ] home page
 - [X] checkout page/payment gateway
-- [ ] login/register page clean up
+- [x] login/register page clean up
 
 ## Bug Fixes
 - [X] send email to usermail on contact form (to show that the message was sent)

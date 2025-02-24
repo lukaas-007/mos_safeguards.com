@@ -2,6 +2,9 @@
 
     @vite(['resources/css/contact.css'])
 
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
+
+
     <div class="contact-wrapper">
         <div class='contact-info'>
             <h1>{{__("contact.info")}}</h1>
@@ -16,6 +19,8 @@
             <x-form-input name="email" label="Email" />
             <x-form-input name="about" label="about" />
             <x-form-input name="message" label="Message" />
+
+            <div class="mt-4 g-recaptcha" data-sitekey={{config('services.recaptcha.key')}}></div>
 
             <button type="submit" class='contact-form-submit btn'>Submit</button>
         </form>
