@@ -4,9 +4,6 @@
 
     <script async src="https://www.google.com/recaptcha/api.js"></script>
 
-    {{-- display the current URL --}}
-    <p>{{ Request::url() }}</p>
-
     <div class="contact-wrapper">
         <div class='contact-info'>
             <h1>{{__("contact.info")}}</h1>
