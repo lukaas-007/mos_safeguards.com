@@ -22,7 +22,8 @@
             <x-form-input name="about" label="about" />
             <x-form-input name="message" label="Message" />
 
-            <div class="mt-4 g-recaptcha" data-sitekey={{config('services.recaptcha.key')}}></div>
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}
 
             <button type="submit" class='contact-form-submit btn'>Submit</button>
         </form>
