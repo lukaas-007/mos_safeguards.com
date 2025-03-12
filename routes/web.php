@@ -12,6 +12,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
+use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 
 Route::get('/', function () {
     return view('home.index');
@@ -55,6 +56,7 @@ Route::post('/contact', function (Request $request) {
         'email' => 'required|email',
         'about' => 'required',
         'message' => 'required',
+        'g-recaptcha-response' => 'required|captcha'
     ]);
 
     Mail::to('vanbriemenlucas@gmail.com')->send(new ContactFormMail($validatedData));
