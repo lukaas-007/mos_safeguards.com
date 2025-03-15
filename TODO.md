@@ -1,7 +1,5 @@
 # TODO List for MOS Safeguards
 
-This document outlines the tasks and improvements needed for the MOS-safeguards.com. Use this list to track progress.
-
 ---
 
 ## Features
@@ -20,4 +18,3 @@ This document outlines the tasks and improvements needed for the MOS-safeguards.
 
 ---
 
-*This TODO list is a living document. Tasks can be added, modified, or reprioritized as needed.*
