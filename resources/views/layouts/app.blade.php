@@ -34,6 +34,9 @@
             <main>
                 {{ $slot }}
             </main>
+
+            @vite(['resources/css/footer.css'])
+            @include('layouts.footer')
         </div>
     </body>
 </html>
