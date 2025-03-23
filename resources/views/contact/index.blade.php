@@ -19,8 +19,11 @@
             <x-form-input name="about" label="about" />
             <x-form-input name="message" label="Message" />
 
-            {!! NoCaptcha::renderJs() !!}
-            {!! NoCaptcha::display() !!}
+            
+            @if (app()->environment('production'))
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+            @endif
 
             <button type="submit" class='contact-form-submit btn'>Submit</button>
         </form>
