@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'author' => env('APP_AUTHOR', 'Author Name')
 ];
