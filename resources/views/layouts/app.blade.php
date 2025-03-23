@@ -31,7 +31,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main style="min-height: 85.5vh;">
                 {{ $slot }}
             </main>
 
