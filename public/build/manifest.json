@@ -1,7 +1,52 @@
 {
+  "resources/css/about.css": {
+    "file": "assets/about-B7pXeoG6.css",
+    "src": "resources/css/about.css",
+    "isEntry": true
+  },
   "resources/css/app.css": {
-    "file": "assets/app-DK7rA6KQ.css",
+    "file": "assets/app-tp0YHVl3.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/cart.css": {
+    "file": "assets/cart-Dy0LjhaZ.css",
+    "src": "resources/css/cart.css",
+    "isEntry": true
+  },
+  "resources/css/contact.css": {
+    "file": "assets/contact-UozLwWOd.css",
+    "src": "resources/css/contact.css",
+    "isEntry": true
+  },
+  "resources/css/footer.css": {
+    "file": "assets/footer-BXGZJCuv.css",
+    "src": "resources/css/footer.css",
+    "isEntry": true
+  },
+  "resources/css/home.css": {
+    "file": "assets/home-DvxH99Sv.css",
+    "src": "resources/css/home.css",
+    "isEntry": true
+  },
+  "resources/css/product.css": {
+    "file": "assets/product-DYvt6h54.css",
+    "src": "resources/css/product.css",
+    "isEntry": true
+  },
+  "resources/css/profile.css": {
+    "file": "assets/profile-BpqcU9ZF.css",
+    "src": "resources/css/profile.css",
+    "isEntry": true
+  },
+  "resources/css/root.css": {
+    "file": "assets/root-D7TiYZgG.css",
+    "src": "resources/css/root.css",
+    "isEntry": true
+  },
+  "resources/css/shop.css": {
+    "file": "assets/shop-BDeRh7Gf.css",
+    "src": "resources/css/shop.css",
     "isEntry": true
   },
   "resources/js/app.js": {

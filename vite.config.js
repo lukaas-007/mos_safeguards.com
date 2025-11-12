@@ -3,7 +3,7 @@ import fs from 'fs';
 import laravel from 'laravel-vite-plugin';
 
 const cssFiles = fs.readdirSync('resources/css')
-    .filter(file => file.endsWith('.css'))
+    .filter(file => file.endsWith('.css') || file.endsWith('.scss'))
     .map(file => `resources/css/${file}`);
 
 export default defineConfig({
