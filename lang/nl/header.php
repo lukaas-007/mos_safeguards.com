@@ -21,5 +21,6 @@ return [
     'cart' => 'Winkelwagen',
     'login' => 'Login',
     'profile' => 'Profiel',
+    'orders' => 'Bestellingen',
     'logout' => 'Log uit',
 ];
