@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $reviews = Review::inRandomOrder()->limit(10)->get();
+        $reviews = Review::inRandomOrder()->where('rating', '>=', 4)->limit(20)->get();
 
         return view('home.index', with([
             'reviews' => $reviews

@@ -1,17 +1,20 @@
 <x-app-layout>
-    @vite(['resources/css/home.css'])
+    @vite(['resources/css/home.scss'])
     <div class="home-page">
         <section class="about-wrapper">
             abouts
         </section>
-        <section class="review-wrapper">
+        <section class="review-container">
             reviews
-            @foreach ($reviews as $review)
-                <div class="review-item">
-                    <h2 class="review-title">{{ $review->title }}</h2>
-                    <p class="review-content">{{ $review->content }}</p>
-                </div>
-            @endforeach
+            <div class='review-wrapper'>
+                @foreach ($reviews as $review)
+                    <div class="review-item">
+                        <p class="review-content">{{ $review->content }}</p>
+                        <h2 class="reviewer-name">{{ $review->name }}</h2>
+                    </div>
+                @endforeach
+            </div>
+
         </section>
         <section class="faq-wrapper">
             faq
